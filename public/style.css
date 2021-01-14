@@ -402,6 +402,12 @@ html {
   
 }
 
+#loadingFAQ{
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
 
 /*#descriptionBack{
   position:absolute;
