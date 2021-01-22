@@ -688,6 +688,20 @@ h1 {
   padding: 5px;
 }
 
+#muteBack{
+  position: absolute;
+  background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,255,255,0) 80%);
+  display: none;
+  width: 23px;
+  border-radius: 50%;
+  opacity: 1;
+  animation: pulsingtohalf 2s infinite alternate;
+}
+
+@keyframes pulsingtohalf { 
+  from { opacity: 0.3; } 
+}
+
 .UIbutton {
   position: relative;
   opacity: 0.6;
