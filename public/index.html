@@ -303,10 +303,10 @@
               
             }else if(name=="roomRosie"){
               console.log("changing to Rosie room");
-              el.setAttribute('position', {x:0, y:-1.6, z: -100});
+              el.setAttribute('position', {x:-94, y:-16, z: -1155});
               //el.object3D.rotation.y = THREE.Math.degToRad(0);
-              el.setAttribute('movement-controls', 'speed', 2);
-              el.emit('resetorientation', {grad: 0});
+              el.setAttribute('movement-controls', 'speed', 0.6);
+              el.emit('resetorientation', {grad: -150});
               
             }else{console.log("what are you talking about?")};
             
@@ -655,7 +655,7 @@
           </a-entity>
           
           <!--ROSIE-->
-          <a-entity position="0 0 -1000">
+          <a-entity position="0 0 -1000" scale="0.5 0.5 0.5">
             <!-- Models -->
             <!--green outside -->
             <a-entity
@@ -706,11 +706,11 @@
             
             <a-sphere
               radius="10"
-              
+              position="12 -45 -19"
               visible="false"
               sound="src: #audioRosie; 
                     autoplay: true;
-                    volume: 0.8;
+                    volume: 0.5;
                     loop: true;
                     refDistance: 100;
                     rolloffFactor: 5"
@@ -723,11 +723,11 @@
                       distance:"5";
                       shadowCameraVisable: "true";></a-entity> -->
 
-            <!-- small black sky -->
-            <a-sky scale="0.5 0.5 0.5" color="#000000"></a-sky>
+            <!-- small black sky 
+            <a-sky scale="0.5 0.5 0.5" color="#000000"></a-sky>-->
 
-            <!-- small white sky -->
-            <a-sky scale="1 1 1" color="#FFFFFF"></a-sky>
+            <!-- small white sky 
+            <a-sky scale="1 1 1" color="#FFFFFF"></a-sky>-->
 
             <!-- big black sky -->
             <a-sky scale="2 2 2" color="#000000"></a-sky>
@@ -743,7 +743,7 @@
             <a-entity
             
             
-            position="0 0 360"
+            position="6 60 -1090"
             
             ><a-sphere id="radio2" visible="false" radio-streaming-two></a-sphere></a-entity>
           
@@ -757,6 +757,9 @@
       <div id="ingameUItop">
         <!--<button id="myButton">Mute!</button> -->
         <div id="topLeft">
+          <div class="ingameIcon" id="muteBack">
+            
+          </div>
           <img
             class="ingameIcon"
             id="muteIcon"
@@ -1148,6 +1151,7 @@
     <script>
       let button = document.getElementById("myButton");
       let icon = document.getElementById("muteIcon");
+      let micBack = document.getElementById('muteBack');
       let audiortc = 1;
       console.log(audiortc);
 
@@ -1179,6 +1183,7 @@
           button.innerHTML = "Unmute";
           icon.src =
             "https://cdn.glitch.com/f44e7d0f-6299-4434-a136-b24515e92365%2Fmaikefeng-jingyin-2.png?v=1603802144461";
+          micBack.style.display = "none";
         } else {
           easyrtc.enableMicrophone(true);
           audiortc = 1;
@@ -1186,6 +1191,7 @@
           button.innerHTML = "Mute";
           icon.src =
             "https://cdn.glitch.com/f44e7d0f-6299-4434-a136-b24515e92365%2Fmaikefeng-2.png?v=1603802144461";
+          micBack.style.display = "block";
         }
       }
     </script>
